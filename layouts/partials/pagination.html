@@ -16,7 +16,7 @@
 				{{ $.Scratch.Set "__paginator.shouldEllipse" false }}
 			{{ else }}
 				{{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
-				{{ $.Scratch.Set "__paginator.ellipsed" true }}
+				{{ $.Scratch.Set "__paginator.ellipsed" false }}
 			{{ end }}
 				{{ if or ($showNumber) ($.Scratch.Get "__paginator.shouldEllipse") }}
 					<a class="page-numbers" href="{{ .URL }}">{{ .PageNumber }}</a>
