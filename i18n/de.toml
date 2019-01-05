@@ -1,0 +1,16 @@
+[help]
+other = "Hilfe"
+
+[writtenBy]
+other = "Geschrieben von:"
+
+[categories]
+one = "Kategorie"
+other = "Kategorien"
+
+[postsBy]
+other = "Posts von"
+
+[readThePost]
+other = "Blogeintrag lesen"
+

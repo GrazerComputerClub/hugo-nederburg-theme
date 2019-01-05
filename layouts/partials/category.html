@@ -1,6 +1,6 @@
 <div class="archive-header">
 	<h1>
-		Category: {{ .Title }}
+		{{i18n "categories" 1}}: {{ .Title }}
 		{{ if .Site.Params.social.rss }}
 		<a href="{{ .RSSLink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
             <i class="fa fa-rss" title="rss"></i>
@@ -46,7 +46,7 @@
 								{{ if and (isset .Site.Params "author") .Site.Params.author }}
 								<span> / </span>
 							<span class="author">
-							<a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
+                <a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="{{i18n "postsBy"}} {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
 							</span>
 								{{ end }}
 							{{ else }}
@@ -72,7 +72,7 @@
 								<article>
 									{{ .Summary }}
 
-									<div class="more-link-wrapper"><a class="more-link" href="{{ .Permalink }}">Read the post<span class="screen-reader-text">This is a Standard Post</span></a></div>
+									<div class="more-link-wrapper"><a class="more-link" href="{{ .Permalink }}">{{i18n "readThePost"}}<span class="screen-reader-text">This is a Standard Post</span></a></div>
 								</article>
 							</div>
 						</div>
