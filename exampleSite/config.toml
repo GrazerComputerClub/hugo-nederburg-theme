@@ -101,3 +101,10 @@ paginate = 5 #frontpage pagination
     instagram     = "full profile url in instagram"
     github        = "full profile url in github"
     pinterest     = "full profile url in pinterest"
+
+  [params.utterances]
+  #comment system Utterances, using GitHub issues with blog title
+  enable = false
+  GitHubRepro=""
+  themelight = true  
+

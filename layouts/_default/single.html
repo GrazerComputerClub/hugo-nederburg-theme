@@ -262,14 +262,21 @@ title="pinterest icon"></i>
 
 <section id="comments" class="comments">
 
+
+
+{{ if .Site.Params.utterances.enable }}
 <script src="https://utteranc.es/client.js"
-        repo="GrazerComputerClub/Blog-Diskussion"
+        repo="{{ .Site.Params.utterances.GitHubRepro }}"
         issue-term="title"
+        {{ if .Site.Params.utterances.themelight }}
         theme="github-light"
+        {{ else }}
+        theme="github-dark"
+        {{ end }}
         crossorigin="anonymous"
         async>
 </script>
-
+{{ end }}
 
   {{ template "_internal/disqus.html" . }}
 
