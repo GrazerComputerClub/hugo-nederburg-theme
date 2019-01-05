@@ -27,7 +27,7 @@
           <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
 
           <span class="author">
-            <a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer | default "" }}" rel="author">{{ .Params.writer | default ""}}</a>
+            <a href="{{ $writer.link | default "" | absURL}}" title="{{i18n "postsBy"}} {{ .Params.writer | default "" }}" rel="author">{{ .Params.writer | default ""}}</a>
           </span>
 
 
@@ -66,7 +66,11 @@
     </p>
   </nav>-->
 
-  <div class="entry-categories"><p><span>Categories</span>
+  {{ if .Params.categories }}
+    <div class="entry-categories"><p><span>{{i18n "categories" (len .Params.categories)}}</span>
+  {{ else }}
+    <div class="entry-categories"><p><span>{{i18n "categories" 1}}</span>
+  {{ end }}
     {{ range $index, $name := .Params.categories }}
     <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" title="View all posts in {{ $name }}">{{ $name }}</a>{{ end }}
   </p>
@@ -91,7 +95,7 @@
       <img alt='{{ .Params.writer | default .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5 .Site.Params.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
     {{ end }}
     <span>
-      Written by:<a href="{{ $writer.link | default .Site.Params.authorlink | absURL}}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a> </span>
+      {{i18n "writtenBy"}}<a href="{{ $writer.link | default .Site.Params.authorlink | absURL}}" title="{{i18n "postsBy"}} {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a> </span>
     </div>
     <div class="bio">
       {{ if and (isset .Params "writer") $writer.bio }}

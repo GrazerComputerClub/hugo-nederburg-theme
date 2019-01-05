@@ -1,0 +1,16 @@
+[help]
+other = "Help"
+
+[writtenBy]
+other = "Written by:"
+
+[categories]
+one = "Category"
+other = "Categories"
+
+[postsBy]
+other = "Posts by"
+
+[readThePost]
+other = "Read the post"
+
