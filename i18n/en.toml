@@ -14,3 +14,10 @@ other = "Posts by"
 [readThePost]
 other = "Read the post"
 
+
+[newer]
+other = "Newer posts"
+
+[older]
+other = "Older posts"
+
