@@ -14,3 +14,8 @@ other = "Posts von"
 [readThePost]
 other = "Blogeintrag lesen"
 
+[newer]
+other = "Neuere Einträge"
+
+[older]
+other = "Ältere Einträge"
